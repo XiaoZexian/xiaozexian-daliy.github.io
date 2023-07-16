@@ -1,538 +1,270 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>My Blog</title><meta name="author" content="Zexian Xiao"><meta name="copyright" content="Zexian Xiao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="My Blog">
+<meta property="og:url" content="https://xiaozexian-daliy.eu.org/index.html">
+<meta property="og:site_name" content="My Blog">
 <meta property="og:locale" content="en_US">
-<meta property="article:author" content="肖泽铣">
+<meta property="og:image" content="https://xiaozexian-daliy.eu.org/images/%E5%9B%BD%E7%8E%8B%E7%8C%AA.png">
+<meta property="article:author" content="Zexian Xiao">
 <meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+<meta name="twitter:image" content="https://xiaozexian-daliy.eu.org/images/%E5%9B%BD%E7%8E%8B%E7%8C%AA.png"><link rel="shortcut icon" href="/"><link rel="canonical" href="https://xiaozexian-daliy.eu.org/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'My Blog',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-07-16 18:28:54'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-<meta name="generator" content="Hexo 5.4.2"></head>
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
         
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-2023.7.2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2023/07/12/2023.7.2/" class="article-date">
-  <time datetime="2023-07-12T04:37:15.805Z" itemprop="datePublished">2023-07-12</time>
-</a>
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/%E5%9B%BD%E7%8E%8B%E7%8C%AA.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">44</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Timeline</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/images/Cozy%20Glow2.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="My Blog"><span class="site-name">My Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Timeline</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">My Blog</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/XiaoZexian/xiaozexian-daliy.github.io" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:xiaozexian@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/07/15/%E5%9B%BE%E7%89%87/" title="图片">图片</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-07-15T04:00:00.000Z" title="Created 2023-07-15 12:00:00">2023-07-15</time></span></div><div class="content"></div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/04/28/2023.4.28%20%E6%88%91%E7%9A%84%E7%BD%91%E7%AB%99%E5%BB%BA%E5%A5%BD%E5%95%A6/" title="2023.4.28 我的网站建好啦">2023.4.28 我的网站建好啦</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-04-28T04:00:00.000Z" title="Created 2023-04-28 12:00:00">2023-04-28</time></span></div><div class="content">This is my very first post. 😁
+Update:hexo cl(clean)hexo g(generate)hexo s(server)hexo d(deploye)
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/20/2023.3.20%20-%2026/" title="2023.3.20 - 26 上班的第二周">2023.3.20 - 26 上班的第二周</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-20T04:00:00.000Z" title="Created 2023-03-20 12:00:00">2023-03-20</time></span></div><div class="content">周一主管出差了看完了黑暗荣耀解说3个小时周二玩了一上午绝境北方周三上午睡觉周四终于开始干正事了开始做表周五做表 Icepak还挺简单周六一上午白干模型太复杂简化了也不一定能用周天应该开始了解dtu了联系老师？太早了点了解一下风能或者cfd在那边有什么工作
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/18/2023.3.18%20-%2019%20%E5%92%B8%E9%B1%BC%E7%9A%84%E5%8F%8C%E4%BC%91/" title="2023.3.18 - 19 咸鱼的双休">2023.3.18 - 19 咸鱼的双休</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-18T04:00:00.000Z" title="Created 2023-03-18 12:00:00">2023-03-18</time></span></div><div class="content">第一个周末无所事事应该学德语或者英语的但是没动力太愧疚了虚度时间
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/15/2023.3.15/" title="2023.3.15">2023.3.15</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-15T04:00:00.000Z" title="Created 2023-03-15 12:00:00">2023-03-15</time></span></div><div class="content">Icepak真复古，还难用感觉上班还行没有网上说的勾心斗角那么紧张嘛
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/14/2023.3.14%20%E5%B8%A6%E8%96%AA%E8%AF%B7%E5%81%87/" title="2023.3.14 带薪请假🤩">2023.3.14 带薪请假🤩</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-14T04:00:00.000Z" title="Created 2023-03-14 12:00:00">2023-03-14</time></span></div><div class="content">请假了但是在前三天试岗期没人知道我没去白拿一天工资哈哈
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/13/2023.3.13%20%E4%B8%8A%E7%8F%AD%E5%95%A6/" title="2023.3.13 上班啦">2023.3.13 上班啦</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-13T04:00:00.000Z" title="Created 2023-03-13 12:00:00">2023-03-13</time></span></div><div class="content">第一天上班起太早了公司还可以上午基本没干正事听公司介绍讲的人都不清楚讲的条理性很差。午饭忘了拍照了下午学SpaceClaim第一次知道怎么好用的建模软件！
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/10/2023.3.10%20%E9%9D%A2%E8%AF%95/" title="2023.3.10 面试">2023.3.10 面试</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-10T04:00:00.000Z" title="Created 2023-03-10 12:00:00">2023-03-10</time></span></div><div class="content">挺顺利，还没下到一楼就发来offer看来是真的缺人了公司外面的环境真的破，东北的农村大概就是这样吧以后不要随便说擅长，简历上已经很谨慎了可是面试的时候不知道怎么说自己口语完全没问题，结果说出来结结巴巴
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/03/2023.3.3%20-%204%20%E5%8C%97%E4%BA%AC/" title="2023.3.3 - 4   北京">2023.3.3 - 4   北京</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-03T04:00:00.000Z" title="Created 2023-03-03 12:00:00">2023-03-03</time></span></div><div class="content">火车上车还要开包检查，可乐给我搞洒了书包网格里都是湿的。火车里全是老人家有几个有正宗的京腔第一次听见余大川外观没啥变化，心理变化挺大。和大一寒假聊的东西完全不一样3号早上在玉渊潭里把口罩弄丢了走了半个小时到火车站旁边才买到然后有走回去坐公交🙃中午逛学校，北邮真的小。下午宿舍呆一会去萨莉亚奥体公园，3年前也是萨莉亚哈哈。余大川点了墨鱼意面加番茄焗饭，巨难吃。晚上逛了逛鸟巢，3年前没进来的地方，余大川和钟骑宇有点像，还是比较愿意思考，有自己的看法的那种。
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/02/27/2023.2.27/" title="2023.2.27">2023.2.27</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-02-27T04:00:00.000Z" title="Created 2023-02-27 12:00:00">2023-02-27</time></span></div><div class="content">做了个梦唉2点睡的7点半就醒了心累啊高中，刚分完座位我还是坐在第三列最后一排，她坐在靠窗那一列第一个（考窗那一列比别的列在前面多出两个）王君贺在讲台上单独点出来要我和危峰换位换到第二列第一排后面是姚子恩。当时想还挺好等下课准备换的时候姚子恩过来对视一眼一下我就意识到如果换座位的话她就变成我的同桌虽然现在不是。瞬间就清醒了不知道怎么面对打开手机一看才7点半🙃问一下她的状况？不聊永远没机会。究竟我在顾虑什么呢
+</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/#content-inner">5</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/%E5%9B%BD%E7%8E%8B%E7%8C%AA.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Zexian Xiao</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">44</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/XiaoZexian/xiaozexian-daliy.github.io"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/XiaoZexian/xiaozexian-daliy.github.io" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:xiaozexian@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">不定期更新欢迎随时访问🥰</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/15/%E5%9B%BE%E7%89%87/" title="图片">图片</a><time datetime="2023-07-15T04:00:00.000Z" title="Created 2023-07-15 12:00:00">2023-07-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/28/2023.4.28%20%E6%88%91%E7%9A%84%E7%BD%91%E7%AB%99%E5%BB%BA%E5%A5%BD%E5%95%A6/" title="2023.4.28 我的网站建好啦">2023.4.28 我的网站建好啦</a><time datetime="2023-04-28T04:00:00.000Z" title="Created 2023-04-28 12:00:00">2023-04-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/20/2023.3.20%20-%2026/" title="2023.3.20 - 26 上班的第二周">2023.3.20 - 26 上班的第二周</a><time datetime="2023-03-20T04:00:00.000Z" title="Created 2023-03-20 12:00:00">2023-03-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/18/2023.3.18%20-%2019%20%E5%92%B8%E9%B1%BC%E7%9A%84%E5%8F%8C%E4%BC%91/" title="2023.3.18 - 19 咸鱼的双休">2023.3.18 - 19 咸鱼的双休</a><time datetime="2023-03-18T04:00:00.000Z" title="Created 2023-03-18 12:00:00">2023-03-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/15/2023.3.15/" title="2023.3.15">2023.3.15</a><time datetime="2023-03-15T04:00:00.000Z" title="Created 2023-03-15 12:00:00">2023-03-15</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span><a class="card-more-btn" href="/archives/" title="More">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">July 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/04/"><span class="card-archive-list-date">April 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">March 2023</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/02/"><span class="card-archive-list-date">February 2023</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/01/"><span class="card-archive-list-date">January 2023</span><span class="card-archive-list-count">8</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/12/"><span class="card-archive-list-date">December 2022</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/10/"><span class="card-archive-list-date">October 2022</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/09/"><span class="card-archive-list-date">September 2022</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">44</div></div><div class="webinfo-item"><div class="item-name">Total Count :</div><div class="item-count">9.7k</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-07-16T10:28:53.911Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2023 By Zexian Xiao</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: (str) => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: (subtitleType) => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        getScript('https://cdn.jsdelivr.net/npm/typed.js/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  }
+}
+</script><script>function subtitleType () {
+  if (true) {
+    typedJSFn.init(["Velkommen^_^","欢迎来到我的新概念朋友圈😊","请各位嘴下留情😘只把我分享给信任的人"])
+  } else {
+    document.getElementById("subtitle").textContent = "Velkommen^_^"
+  }
+}
+typedJSFn.run(subtitleType)</script></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/07/12/2023.7.2/">2023.3.20 - 26</a>
-    </h1>
-  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>周一主管出差了看完了黑暗荣耀解说3个小时</p>
+  typeof typed === 'object' && typed.destroy()
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/07/12/2023.7.2/" data-id="cljz8u3gt0015b8vk2taq4uq9" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
 
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
 
-  
-    <article id="post-2023.3.3 - 4" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2023/07/11/2023.3.3%20-%204/" class="article-date">
-  <time datetime="2023-07-11T11:32:43.051Z" itemprop="datePublished">2023-07-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/07/11/2023.3.3%20-%204/">2023.3.3 - 4   北京</a>
-    </h1>
-  
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>火车上车还要开包检查，可乐给我搞洒了书包网格里都是湿的。火车里全是老人家有几个有正宗的京腔第一次听见<br>余大川外观没啥变化，心理变化挺大。和大一寒假聊的东西完全不一样<br>3号早上在玉渊潭里把口罩弄丢了走了半个小时到火车站旁边才买到然后有走回去坐公交🙃中午逛学校，真的小 下午宿舍呆一会去萨莉亚奥体公园。余大川墨鱼意面加番茄焗饭</p>
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/07/11/2023.3.3%20-%204/" data-id="cljz8u3gt0016b8vk5cw1gi1w" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
 
+  typeof panguInit === 'function' && panguInit()
 
-  
-    <article id="post-hello" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2023/07/11/hello/" class="article-date">
-  <time datetime="2023-07-11T11:32:43.051Z" itemprop="datePublished">2023-07-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/07/11/hello/">2023.4.28 我的网站建好啦</a>
-    </h1>
-  
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>This is my very first post. </p>
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/07/11/hello/" data-id="cljz8u3gt0017b8vk5x7oh2ic" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
 
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
 
-  
-    <article id="post-2023.3.20 - 26" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2023/07/11/2023.3.20%20-%2026/" class="article-date">
-  <time datetime="2023-07-11T11:32:43.050Z" itemprop="datePublished">2023-07-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/07/11/2023.3.20%20-%2026/">2023.3.20 - 26</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>周一主管出差了看完了黑暗荣耀解说3个小时<br>周二玩了一上午绝境北方<br>周三上午睡觉<br>周四终于开始干正事了开始做表<br>周五做表 Icepak还挺简单<br>周六一上午白干模型太复杂简化了也不一定能用<br>周天应该开始了解dtu了联系老师？太早了点了解一下风能或者cfd在那边有什么工作</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/07/11/2023.3.20%20-%2026/" data-id="cljz8u3gs0012b8vkft6gg99f" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2023.3.18 - 19" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2023/07/11/2023.3.18%20-%2019/" class="article-date">
-  <time datetime="2023-07-11T11:32:43.050Z" itemprop="datePublished">2023-07-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/07/11/2023.3.18%20-%2019/">2023.3.18 - 19</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>第一个周末无所事事应该学德语或者英语的但是没动力</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/07/11/2023.3.18%20-%2019/" data-id="cljz8u3gs0014b8vk5cd8a1xu" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2023.3.15" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2023/07/11/2023.3.15/" class="article-date">
-  <time datetime="2023-07-11T11:32:43.049Z" itemprop="datePublished">2023-07-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/07/11/2023.3.15/">2023.3.15</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Icepak真复古，还难用</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/07/11/2023.3.15/" data-id="cljz8u3gs0011b8vk19vfedlz" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2023.3.14" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2023/07/11/2023.3.14/" class="article-date">
-  <time datetime="2023-07-11T11:32:43.048Z" itemprop="datePublished">2023-07-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/07/11/2023.3.14/">2023.3.14</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>请假了但是在前三天试岗期没人知道我没去白拿一天工资哈哈</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/07/11/2023.3.14/" data-id="cljz8u3gs0013b8vkdibxb8d5" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2023.3.13" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2023/07/11/2023.3.13/" class="article-date">
-  <time datetime="2023-07-11T11:32:43.039Z" itemprop="datePublished">2023-07-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/07/11/2023.3.13/">2023.3.13</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>第一天上班<br>起太早了公司还可以<br>上午基本没干正事听公司介绍讲的人都不清楚讲的条理性很差。午饭忘了拍照了<br>下午学SpaceClaim第一次知道怎么好用的建模软件</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/07/11/2023.3.13/" data-id="cljz8u3gr000zb8vkf5o8cr9j" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2023.2.9" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2023/07/11/2023.2.9/" class="article-date">
-  <time datetime="2023-07-11T11:32:43.038Z" itemprop="datePublished">2023-07-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/07/11/2023.2.9/">2023.2.9 阳台山+emo时刻</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>阳台山环境可以风景不如梅林绿道<br>听到不少消息不过都没有什么太意外的 杨东霖不愿意说他的想法也没什么意外的<br>陈诗雅对自己的事了解的这么清楚还是挺让我吃惊的 她心里干净的想白纸一样感觉不像是装的真的是啥都没有 未来工作生活情感的规划长的短的都没有研究生或者工作一段时间就会有<br>❗️家庭环境：是否让孩子参与时政的讨论而不是大人一直发言同时留意自己的发言不要一味强调一个方向的观点尤其孩子容易先入为主❗️<br>吴其桐 在我心里的地位稍微有点下降可能是了解多了她的规划其实没那么清楚<br>段欣知 第一次这么彻底的审视这段经历 真的让我学到很多感受很多 我的愧疚一部分来自于高中时我对她的骚扰确实一定程度上影响人家还一部分原因不在我但是和我有关彭琳钧张昊然是真的很过分不止一次当着我的面搞她现在想到她的表情我都有点痛心 现在感觉没什么但是当时真的给她很大压力如果是那种心态比较脆弱的话我都不知道怎么办还好她没有什么反应。我完全没有给她带来什么正向的东西。 放不下的原因：在高中暗无天日的环境中为数不多真正能说上话互相鼓励的 我的标准-内心远远大于外貌虽然她外貌不差 心里活泼的性格 当时还算一致的长远目标希望能在有山有水的地方长期居住 虽然可能会变至少说明不是向往喧嚣的内心是我比较适合的类型 但是我可能不适合她 比较传统（危峰的评价但我挺认同的）虽然可能是减分项比如男女平等孩子教育方式<br>不愿再次见她 有可能再次影响到她虽然可能性不大但万一呢 这是一种情感上的自卑心理这样长期下去不在平等的地位上对自己心理没有好处但是我真的不希望她再受什么委屈尤其是因为我 突然感觉自己好像爷爷奶奶辈只关心别人而忽略了自己<br>——————————————<br>我这种到底是一种什么样的心理呢？应该不算是舔狗吧因为我根本没有去舔 也不是不成熟的青涩我根本没有不好意思去问 应该就是想的太多爱得太深对对方不够了解 如果她性格比较外向愿意出来那能成吗 男女朋友好处：放假的时候有人能陪我玩 但是开学的时候异地还要维持🧐维持应该没那么难平时随便聊聊玩玩游戏？还是我想简单了<br>——————————————<br>看到聊天记录之前有一种久违的激动。之前只有在小学偷偷玩电脑初三换座位高考之前的大考英语对完形填空选择才有的感觉。收到录取通知书都没这么激动<br>放不下究竟为什么呢 高中时期印象太好了，确实是很温柔 现在看来高中时还是太单纯只是感觉很好但具体到一个方面有说不出来还是了解不够深。能真心说得上话的大学就没有，能完整听完听懂我的话的人 ，晚自习好几次聊了大半个晚上说明还是能聊得来嘛。有一次聊得我俩作业都没动他还是语文科代表叫她别收我的作业😅<br>是时候该放下了吗 揣测聊天记录没用 如果还是当年的样子恐怕现在的我不会特别喜欢因为当时心志和追求还有对现实生活成本生活方式理解不够深刻 人也会变虽然她估计不会变太多 只能当成一个美好的回忆<br>快三点了还是睡不着</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/07/11/2023.2.9/" data-id="cljz8u3gr000yb8vkdym1fu1z" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2023.3.10" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2023/07/11/2023.3.10/" class="article-date">
-  <time datetime="2023-07-11T11:32:43.038Z" itemprop="datePublished">2023-07-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/07/11/2023.3.10/">2023.3.10</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>面试<br>挺顺利，还没下到一楼就发来offer看来是真的缺人了<br>以后不要随便说擅长，简历上已经很谨慎了可是面试的时候不知道怎么说自己口语完全没问题，结果说出来结结巴巴</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/07/11/2023.3.10/" data-id="cljz8u3gs0010b8vk86up5e84" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-  </nav>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2023/07/12/2023.7.2/">2023.3.20 - 26</a>
-          </li>
-        
-          <li>
-            <a href="/2023/07/11/2023.3.3%20-%204/">2023.3.3 - 4   北京</a>
-          </li>
-        
-          <li>
-            <a href="/2023/07/11/hello/">2023.4.28 我的网站建好啦</a>
-          </li>
-        
-          <li>
-            <a href="/2023/07/11/2023.3.20%20-%2026/">2023.3.20 - 26</a>
-          </li>
-        
-          <li>
-            <a href="/2023/07/11/2023.3.18%20-%2019/">2023.3.18 - 19</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2023 肖泽铣<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
-</body>
-</html>
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
